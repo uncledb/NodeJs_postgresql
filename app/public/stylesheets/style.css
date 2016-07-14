@@ -1,0 +1,38 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    height: 100%;
+}
+
+a {
+    color: #00B7FF;
+}
+
+th {
+    border: solid 1px #cccccc;
+    text-align: left;
+    padding: 3px;
+}
+
+td {
+    padding: 3px;
+    vertical-align: top;
+    text-align: left;
+    border: solid 1px #cccccc;
+    cursor: default;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100px;
+
+}
+
+#detail {
+    width: 100%;
+    height: 60px;
+}
+.condition{
+    display: inline-block;
+}

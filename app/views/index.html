@@ -1,0 +1,118 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>崩溃日志</title>
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="javascripts/index.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script>
+        var data = {
+            "id": 898,
+            "appUserId": 0,
+            "crashTime": "2016-04-12 02:57:41 11",//时间
+            "devType": "iPhone OS",
+            "appVersionName": "1.4.8",//版本
+            "appVersionCode": null,
+            "androidSdkVersion": null,
+            "androidOsVersion": null,
+            "iosVersion": "9.2",
+            "stackTrace": "didFailToRegisterForRemoteNotifications",//错误详情
+            "deviceInfo": "test",
+            "manufacturer": null
+        };
+    </script>
+</head>
+<body>
+<div style="overflow: hidden;min-height: 350px;">
+    <div id="head" style="position:fixed;top: 0;width: 100%;background-color: #cccccc;z-index: 100">
+        <div>
+            <button onclick="doClear();">收起</button>
+            <button onclick="doExpand();">展开</button>
+        </div>
+        <div>
+            <textarea id="detail" placeholder="点击查询结果可展示表格中内容"></textarea>
+        </div>
+        <div>
+            <span style="color: #cd561f;">排序:</span>
+            <select id="orderColumn">
+                <option value="id">id</option>
+                <option value="appUserId">appUserId</option>
+                <option value="crashTime" selected>crashTime</option>
+                <option value="devType">devType</option>
+                <option value="appVersionName">appVersionName</option>
+                <option value="appVersionCode">appVersionCode</option>
+                <option value="androidSdkVersion">androidSdkVersion</option>
+                <option value="iosVersion">iosVersion</option>
+                <option value="stackTrace">stackTrace</option>
+                <option value="deviceInfo">deviceInfo</option>
+                <option value="manufacturer">manufacturer</option>
+            </select>
+            <select id="orderType">
+                <option value="ASC">ASC</option>
+                <option value="DESC" selected>DESC</option>
+            </select>
+            <span style="color: #cd561f;">| 显示数量:</span>
+            <select id="num">
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="150">200</option>
+            </select>
+        </div>
+        <div class="conditions">
+            <div class="condition">
+                <input class="conditionOn" type="checkbox">
+                <select class="whereColumn">
+                    <option value="id">id</option>
+                    <option value="appUserId">appUserId</option>
+                    <option value="crashTime">crashTime</option>
+                    <option value="devType">devType</option>
+                    <option value="appVersionName">appVersionName</option>
+                    <option value="appVersionCode">appVersionCode</option>
+                    <option value="androidSdkVersion">androidSdkVersion</option>
+                    <option value="iosVersion">iosVersion</option>
+                    <option value="stackTrace">stackTrace</option>
+                    <option value="deviceInfo">deviceInfo</option>
+                    <option value="manufacturer">manufacturer</option>
+                </select>
+                <select class="whereSymbol">
+                    <option value="=">=</option>
+                    <option value="like">contains</option>
+                    <option value=">=">>=</option>
+                    <option value="<="><=</option>
+                </select>
+                <input class="whereValue" type="text">
+
+            </div>
+        </div>
+        <div>
+            <button onclick="doAddConditions();">增加条件</button>
+            <button onclick="doSelect();">查询</button>
+        </div>
+    </div>
+    <div id="table-container" style="overflow: auto;position: relative;top: 140px;z-index: 99">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>appUserId</th>
+                <th style="min-width: 200px;">crashTime</th>
+                <th style="min-width: 120px;">devType</th>
+                <th>appVersionName</th>
+                <th>appVersionCode</th>
+                <th>androidSdkVersion</th>
+                <th>androidOsVersion</th>
+                <th>iosVersion</th>
+                <th style="min-width: 500px;">stackTrace</th>
+                <th>deviceInfo</th>
+                <th>manufacturer</th>
+            </tr>
+            </thead>
+            <tbody id="result">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
