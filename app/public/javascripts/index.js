@@ -42,8 +42,9 @@ function pack(datas) {
 		return;
 	}
 	var tdsHtml = '';
-	datas.forEach(function (item) {
+	datas.forEach(function (item,index) {
 		tdsHtml += '<tr>' +
+			'<td>' + (+index + 1) + '</td>' +
 			'<td>' + item.id + '</td>' +
 			'<td>' + item.appUserId + '</td>' +
 			'<td>' + item.crashTime + '</td>' +
